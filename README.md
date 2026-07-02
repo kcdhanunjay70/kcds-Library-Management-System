@@ -33,6 +33,22 @@ Password: admin123
 
 Change them before deployment. Start MongoDB locally for persistent storage; without it, the app uses temporary seeded memory storage.
 
+### Windows launcher
+
+PowerShell users can start the project with the included port-aware launcher:
+
+```powershell
+.\run-library.ps1
+```
+
+If another project already uses port 5000, choose a different port:
+
+```powershell
+.\run-library.ps1 -Port 5001
+```
+
+The launcher reports a clear error when the selected port is occupied instead of silently opening the wrong application.
+
 ## Docker
 
 ```bash
@@ -80,6 +96,7 @@ templates/              Catalog, login, admin, and transaction views
 static/css/style.css    Responsive visual system
 static/js/app.js        Search, filters, tables, and modals
 tests/test_app.py       Route and circulation tests
+run-library.ps1         Port-aware Windows launcher
 .github/workflows/      Continuous integration
 render.yaml             Render deployment blueprint
 Dockerfile              Production container
